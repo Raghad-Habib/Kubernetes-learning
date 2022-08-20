@@ -4,7 +4,6 @@ metadata:
   name: multi-pod
   labels:
     app: multi-pod
-    type: frontend
 spec:
   containers:
     - name: nginx
