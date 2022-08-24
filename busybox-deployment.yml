@@ -1,23 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deploy
+  name: busybox-deployment
   labels:
     app: web
     kind: frontend
 spec:
   template:
     metadata:
-      name: my-first-pod
+      name: busybox
       labels:
-        app: myFirstPod
+        app: web
         type: frontend
     spec:
       containers:
-        - name: nginx
-          image: nginx:alpine
+        - name: busybox
+          image: busybox
   replicas: 3
   selector:
     matchLabels:
       type: frontend
-      
