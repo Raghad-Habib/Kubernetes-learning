@@ -16,6 +16,9 @@ spec:
       containers:
         - name: busybox
           image: busybox
+          command:
+           - sleep
+           - "3600"
   replicas: 3
   selector:
     matchLabels:
