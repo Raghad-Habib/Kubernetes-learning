@@ -8,6 +8,10 @@ spec:
   containers:
     - name: nginx
       image: nginx
+      args:
+      - /bin/sh
+      - -c
+      - touch /tmp/healthy
       livenessProbe:
         initialDelaySeconds: 5
         periodSeconds: 3
@@ -16,7 +20,7 @@ spec:
         exec:
           command:
           - cat 
-          - /etc/nginx/nginx.confg
+          - /tmp/healthy
       readinessProbe:
         initialDelaySeconds: 5
         periodSeconds: 3
@@ -25,6 +29,6 @@ spec:
         exec:
           command:
           - cat 
-          - /etc/nginx/nginx.confg
+          - /tmp/healthy
      
       
