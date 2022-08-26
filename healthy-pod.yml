@@ -13,9 +13,18 @@ spec:
         periodSeconds: 3
         timeoutSeconds: 1
         failureThreshold: 5
+        exec:
+          command:
+          - cat 
+          - /etc/nginx/nginx.confg
       readinessProbe:
         initialDelaySeconds: 5
         periodSeconds: 3
         timeoutSeconds: 1
         failureThreshold: 7
+        exec:
+          command:
+          - cat 
+          - /etc/nginx/nginx.confg
+     
       
