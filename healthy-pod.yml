@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: healthy-pod
+  labels:
+    app: web
+spec:
+  containers:
+    - name: nginx
+      image: nginx
+      livenessProbe:
+        initialDelaySeconds: 5
+        periodSeconds: 3
+        timeoutSeconds: 1
+        failureThreshould: 5
+      readinessProbe:
+        initialDelaySeconds: 5
+        periodSeconds: 3
+        timeoutSeconds: 1
+        failureThreshould: 7
+      
