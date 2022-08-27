@@ -7,7 +7,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: redis
+      name: redis-pod
       labels:
         app: redis
     spec:
